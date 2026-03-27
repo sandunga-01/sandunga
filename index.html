@@ -1,103 +1,29 @@
-import HeroSection from "@/components/HeroSection";
-import ProductCard from "@/components/ProductCard";
-import Footer from "@/components/Footer";
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Lovable App</title>
+    <meta name="description" content="Lovable Generated Project" />
+    <meta name="author" content="Lovable" />
 
-import pajama1 from "@/assets/pajama1.jpg";
-import pajama2 from "@/assets/pajama2.jpg";
-import pajama3 from "@/assets/pajama3.jpg";
-import pajama4 from "@/assets/pajama4.jpg";
-import pajama5 from "@/assets/pajama5.jpg";
-import pajama6 from "@/assets/pajama6.jpg";
+    <!-- TODO: Update og:title to match your application name -->
+    <meta property="og:title" content="Lovable App" />
+    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-// ⚠️ Cambia este número por tu número real de WhatsApp (sin +, sin espacios)
-const WHATSAPP_NUMBER = "573174365519";
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
 
-const products = [
-  {
-    name: "Set Rosa Satinado",
-    price: "$45.000",
-    image: pajama1,
-    description: "Conjunto de camisa y short en satín rosa suave. Fresco y elegante para el verano.",
-  },
-  {
-    name: "Set Azul Marino Seda",
-    price: "$65.000",
-    image: pajama2,
-    description: "Pijama de seda en azul marino con ribetes dorados. Lujo y comodidad.",
-  },
-  {
-    name: "Set Floral Algodón",
-    price: "$38.000",
-    image: pajama3,
-    description: "Conjunto en algodón con estampado floral rosa. Suave y transpirable.",
-  },
-  {
-    name: "Set Rayas Clásico",
-    price: "$42.000",
-    image: pajama4,
-    description: "Pijama de rayas rosa y crema en algodón premium. Un clásico renovado.",
-  },
-  {
-    name: "Set Menta Fresca",
-    price: "$48.000",
-    image: pajama5,
-    description: "Conjunto de tirantes en seda verde menta. Perfecto para noches cálidas.",
-  },
-  {
-    name: "Set Borgoña Velvet",
-    price: "$72.000",
-    image: pajama6,
-    description: "Pijama en terciopelo borgoña. Calidez y elegancia para el invierno.",
-  },
-];
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="font-display text-2xl font-bold text-foreground">
-            Sandunga
-          </span>
-          <a
-            href="#catalogo"
-            className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Catálogo
-          </a>
-        </div>
-      </nav>
-
-      <HeroSection />
-
-      {/* Catalog */}
-      <section id="catalogo" className="max-w-7xl mx-auto px-6 py-20">
-        <div className="text-center mb-14">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Nuestro Catálogo
-          </h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Elige tu pijama favorita y haz tu pedido directamente por WhatsApp
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard
-              key={product.name}
-              {...product}
-              whatsappNumber={WHATSAPP_NUMBER}
-            />
-          ))}
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
-};
-
-export default Index;
 
 
